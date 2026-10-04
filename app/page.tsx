@@ -45,12 +45,6 @@ const FAQS = [
   { q:"What interview topics are supported?", a:"Currently: Java, SQL, DSA, Full Stack (React/Next.js), Computer Science fundamentals, and Custom topics. More domains are planned." }
 ];
 
-const TESTIMONIALS = [
-  { text:"InterviewMirror actually remembers what I struggle with. After 3 sessions, it stopped asking easy questions and started drilling me on my HashMap weaknesses. Landed my Google offer.", name:"Arjun S.", role:"SDE-2 @ Google", initials:"AS" },
-  { text:"The AI follow-ups are shockingly accurate. It caught that I could explain concepts but not edge cases — and fixed that in 2 sessions.", name:"Priya M.", role:"Backend Engineer @ Stripe", initials:"PM" },
-  { text:"I used 5 different AI interview tools. InterviewMirror is the only one that gets smarter the more I use it. The memory loop is a game-changer.", name:"Rohan K.", role:"CS Grad @ IIT Bombay", initials:"RK" }
-];
-
 export default function App() {
   const [activePage, setActivePage] = useState<Page>("home");
   const [setup, setSetup] = useState<InterviewSetup>(defaultSetup);
@@ -248,22 +242,6 @@ export default function App() {
             ].map((item) => (
               <div className="flow-step" key={item.title} role="listitem">
                 <div className="flow-icon">{item.icon}</div><h4>{item.title}</h4><p>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="section" style={{ paddingTop:0 }} aria-labelledby="testimonials-heading">
-          <div className="section-label"><Award size={12} /> What users say</div>
-          <h2 id="testimonials-heading">Real results, real feedback.</h2>
-          <div className="testimonial-grid">
-            {TESTIMONIALS.map((t) => (
-              <div className="testimonial-card" key={t.name}>
-                <p className="testimonial-text">&ldquo;{t.text}&rdquo;</p>
-                <div className="testimonial-author">
-                  <div className="avatar">{t.initials}</div>
-                  <div><div className="author-name">{t.name}</div><div className="author-role">{t.role}</div></div>
-                </div>
               </div>
             ))}
           </div>
